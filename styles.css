@@ -1,23 +1,26 @@
 *{
-    max-width: 100%;
-    
+    max-width: 1400px;
+    transition: all 0.3s ease;
 }
 body{
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0px;
+    transition: all 0.3s ease;
 }
 nav {
     background-color: #333;
-    padding: 10px 0;
-    margin: 10px auto;
-    max-width: 1400px;
-    border-radius: 10px;
+    padding: 1rem 0;
+    margin: 1rem auto;
+    max-width: 140rem;
+    border-radius: 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    position: relative;
+    position: sticky;
+    transform: scale(1);
+    transition: all 0.3s ease;
 }
 
 .nav-toggle {
@@ -28,20 +31,30 @@ nav {
     display: none;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 2rem;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 1001;
+    width: 30px;
+    height: 24px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-toggle-label:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-toggle-label span {
     display: block;
-    width: 25px;
-    height: 10px;
+    width: 100%;
+    height: 3px;
     background-color: white;
-    margin: 5px 0;
-    transition: 0.3s;
+    margin: 4px 0;
+    transition: all 0.3s ease;
     border-radius: 2px;
+    transform-origin: center;
 }
 
 nav ul {
@@ -53,7 +66,7 @@ nav ul {
     transition: transform 0.3s ease;
 }
 nav ul li {    
-    margin: 0 15px;
+    margin: 0 1.5rem;
 }
 nav ul li a {    color: white;
     text-decoration: none;
@@ -78,7 +91,14 @@ p {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    align-items: center;        
+    align-items: center;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.first-btn button:hover {
+    background-color: #020202;
+    transform: scale(1.05);
 }
 .first-btn button a {
     color: white;
@@ -94,7 +114,15 @@ p {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px !important;
-    align-items: center;    
+    align-items: center;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.second-btn button:hover {
+    background-color: #333;
+    color: white;
+    transform: scale(1.05);
 }
 .second-btn button a {
     color: #333;
@@ -108,22 +136,29 @@ p {
     color: white;
 }
 .home-image {
-    margin: 50px;
+    margin: 5vh 5vw;
     display: flex;
     justify-content: center;
-    
+    transform: scale(1);
+    transition: all 0.3s ease;
 }
+
 .home-image img {
-    width: 100%;
-    height: 300px;
+    width: 90vw;
+    max-width: 800px;
+    height: 30vh;
+    min-height: 200px;
     border-radius: 10px;
     margin-bottom: 20px;
+    transform: scale(1);
+    transition: all 0.3s ease;
 }
 
 .about-section {
     width:100%;
     max-width: 1400px;
     margin: 50px auto;
+    padding: 20px;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -140,6 +175,13 @@ p {
     cursor: pointer;
     border-radius: 5px;
     justify-content: left;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.third-btn button:hover {
+    background-color: #020202;
+    transform: scale(1.05);
 }
 .third-btn button a {
     color: white;
@@ -175,7 +217,13 @@ p {
     border-radius: 10px;
     padding: 10px;
     flex: 1;
-    
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .book-card h3 {
     margin: 10px 0;
@@ -250,8 +298,15 @@ p {
     color: #333;
     border-radius: 50%;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     font-size: 24px;
+    transform: scale(1);
+}
+
+.social-media a:hover {
+    background-color: #555;
+    transform: scale(1.1);
+    color: #fff;
 }
 
 .social-media a:hover {
@@ -264,6 +319,7 @@ p {
 
 /* Media Queries */
 @media (max-width: 768px) {
+
     .nav-toggle-label {
         display: block;
     }
@@ -276,11 +332,13 @@ p {
         background-color: #333;
         flex-direction: column;
         padding: 20px 0;
-        transform: translateY(-100%);
+        transform: translateY(-120%);
         opacity: 0;
         visibility: hidden;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .nav-toggle:checked ~ ul {
@@ -290,31 +348,46 @@ p {
     }
     
     .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(6px, 6px);
+        width: 80%;
     }
     
     .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
         opacity: 0;
+        transform: translateX(20px);
     }
     
     .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(6px, -6px);
+        width: 80%;
     }
     
     nav ul li {
-        margin: 10px 0;
+        margin: 8px 0;
         text-align: center;
+        transform: translateX(-20px);
+        opacity: 0;
+        animation: slideInLeft 0.3s ease forwards;
     }
+    
+    nav ul li:nth-child(1) { animation-delay: 0.1s; }
+    nav ul li:nth-child(2) { animation-delay: 0.2s; }
+    nav ul li:nth-child(3) { animation-delay: 0.3s; }
+    nav ul li:nth-child(4) { animation-delay: 0.4s; }
     
     nav ul li a {
         display: block;
-        padding: 10px 20px;
-        transition: background-color 0.3s;
+        padding: 12px 25px;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 0 15px;
+        font-weight: 500;
     }
     
     nav ul li a:hover {
-        background-color: #555;
-        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+        color: #fff;
     }
     
     .btn {
@@ -357,7 +430,7 @@ p {
     
     nav {
         margin: 5px;
-        padding: 5px 0;
+        
     }
     
     .nav-toggle-label {
@@ -408,5 +481,129 @@ p {
         width: 35px;
         height: 35px;
         font-size: 18px;
+    }
+}
+
+/* Keyframe animations for mobile menu */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Zoom-Responsive Design - Elements scale and move based on zoom level */
+@media (max-width: 1200px) {
+    /* Medium zoom level */
+    nav {
+        transform: scale(0.95);
+        margin: 0.8rem auto;
+    }
+    
+    .home-image {
+        transform: scale(0.9);
+        margin: 4vh 4vw;
+    }
+    
+    .home-image img {
+        transform: scale(0.95);
+    }
+    
+    .about-section {
+        transform: scale(0.95);
+    }
+    
+    .book-card {
+        transform: scale(0.95);
+    }
+    
+    .social-media a {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 900px) {
+    /* Higher zoom level */
+    nav {
+        transform: scale(0.9);
+        margin: 0.6rem auto;
+    }
+    
+    .home-image {
+        transform: scale(0.85);
+        margin: 3vh 3vw;
+    }
+    
+    .home-image img {
+        transform: scale(0.9);
+        height: 25vh;
+    }
+    
+    .about-section {
+        transform: scale(0.9);
+        margin: 3vh auto;
+    }
+    
+    .book-card {
+        transform: scale(0.9);
+    }
+    
+    .social-media a {
+        transform: scale(0.85);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Very high zoom level */
+    nav {
+        transform: scale(0.85);
+        margin: 0.4rem auto;
+    }
+    
+    .home-image {
+        transform: scale(0.8);
+        margin: 2vh 2vw;
+    }
+    
+    .home-image img {
+        transform: scale(0.85);
+        height: 20vh;
+    }
+    
+    .about-section {
+        transform: scale(0.85);
+        margin: 2vh auto;
+    }
+    
+    .book-card {
+        transform: scale(0.85);
+    }
+    
+    .social-media a {
+        transform: scale(0.8);
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 0.85rem;
+    }
+    
+    nav ul li a {
+        font-size: 14px;
     }
 }
