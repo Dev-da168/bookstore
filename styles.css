@@ -11,7 +11,8 @@ body{
 nav {
     background-color: #333;
     padding: 10px 0;
-    margin: 10px;
+    margin: 10px auto;
+    max-width: 1400px;
     border-radius: 10px;
     position: sticky;
     top: 0;
@@ -120,9 +121,9 @@ p {
 }
 
 .about-section {
-    max-width:1000px;
     width:100%;
-    margin: 50px;
+    max-width: 1400px;
+    margin: 50px auto;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -160,7 +161,7 @@ p {
     border-radius: 10px;
 }
 .container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 20px auto;
     padding: 0 20px;
 }
@@ -226,7 +227,7 @@ p {
     text-decoration: underline;
 }
 #contact {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 50px auto;
     padding: 20px;
     background-color: #333;
