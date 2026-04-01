@@ -108,7 +108,7 @@ p {
     background-color: #020202;
 }
 .second-btn button {
-    color: #333;
+    color: #fff;
     background-color: transparent;
     border:#333 solid 1px;
     padding: 10px 20px;
@@ -146,7 +146,7 @@ p {
 .home-image img {
     width: 90vw;
     max-width: 800px;
-    height: 30vh;
+    height: 90vh;
     min-height: 200px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -566,7 +566,6 @@ p {
 }
 
 @media (max-width: 600px) {
-    /* Very high zoom level */
     nav {
         transform: scale(0.85);
         margin: 0.4rem auto;
